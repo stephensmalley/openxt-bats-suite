@@ -12,14 +12,14 @@
 }
 
 @test "check config SELinux labels" {
-    run restorecon -Rnv /boot
+    run restorecon -Rnv /config
     count=$(echo ${output} | grep reset | wc -l)
 
     [ "$count" -eq 0 ]
 }
 
 @test "check storage SELinux labels" {
-    run restorecon -Rnv /boot
+    run restorecon -Rnv /storage
     count=$(echo ${output} | grep reset | wc -l)
 
     [ "$count" -eq 0 ]

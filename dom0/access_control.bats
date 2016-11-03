@@ -14,6 +14,12 @@
     [ "${count}" -eq 0 ]
 }
 
+@test "no avc messages in /var/log/messages" {
+    count=$(grep avc:.*denied /var/log/messages|wc -l)
+
+    [ "${count}" -eq 0 ]
+}
+
 @test "check NDVM flask label" {
     run xec-vm -n Network -g flask-label
 

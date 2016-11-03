@@ -87,9 +87,9 @@
     run ps -o label -C rpc-proxy
 
     [ "$status" -eq 0 ]
-    [ "${lines[1]}" = "system_u:system_r:dbusbouncer_t:s0" ]
-    [ "${lines[2]}" = "system_u:system_r:dbusbouncer_t:s0" ]
-    [ "${lines[3]}" = "system_u:system_r:dbusbouncer_t:s0" ]
+    [ "${lines[1]}" = "system_u:system_r:rpcproxy_t:s0" ]
+    [ "${lines[2]}" = "system_u:system_r:rpcproxy_t:s0" ]
+    [ "${lines[3]}" = "system_u:system_r:rpcproxy_t:s0" ]
 }
 
 @test "check vusb-daemon SELinux label" {
